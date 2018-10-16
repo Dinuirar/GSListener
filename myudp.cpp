@@ -1,11 +1,6 @@
 #include "myudp.h"
 #include <stdio.h>
 
-// TODO:
-// 1. save new logfile (and append data to it)
-// 2. data formatting
-// 
-
 MyUDP::MyUDP(QObject *parent) :QObject(parent){
     socket = new QUdpSocket(this);
     socket->bind(QHostAddress("172.16.18.120"),43);
@@ -28,9 +23,9 @@ void MyUDP::readReady() {
     QHostAddress sender;
     quint16 port;
     socket->readDatagram(buffer.data(),buffer.size(),&sender,&port);
-    qDebug() << "sender: " << sender.toString();
-    qDebug() << "sender port:" << port;
-    qDebug() << "length: " << size_buffer;
+//    qDebug() << "sender: " << sender.toString();
+//    qDebug() << "sender port:" << port;
+//    qDebug() << "length: " << size_buffer;
 //    unsigned int y, y1;
     unsigned int w = 0, w2 = 0, wt = 0;
     for (int i = 0; i < size_buffer; i+=2) {
