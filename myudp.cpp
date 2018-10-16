@@ -1,6 +1,11 @@
 #include "myudp.h"
 #include <stdio.h>
 
+// TODO:
+// 1. save new logfile (and append data to it)
+// 2. data formatting
+// 
+
 MyUDP::MyUDP(QObject *parent) :QObject(parent){
     socket = new QUdpSocket(this);
     socket->bind(QHostAddress("172.16.18.120"),43);
