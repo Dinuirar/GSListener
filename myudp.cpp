@@ -1,5 +1,6 @@
 #include "myudp.h"
 #include <stdio.h>
+#include <QTime>
 
 MyUDP::MyUDP(QObject *parent) :QObject(parent){
     socket = new QUdpSocket(this);
@@ -28,6 +29,8 @@ void MyUDP::readReady() {
 //    qDebug() << "length: " << size_buffer;
 //    unsigned int y, y1;
     unsigned int w = 0, w2 = 0, wt = 0;
+    //(QTime().currentTime()).toString();
+    tmp.append( (QTime().currentTime()).toString() + " " );
     for (int i = 0; i < size_buffer; i+=2) {
 //        y = (tmp.number( (unsigned char)buffer[i], 10) ).toInt();
 
